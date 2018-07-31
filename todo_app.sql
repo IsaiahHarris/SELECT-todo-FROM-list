@@ -22,7 +22,7 @@ PRIMARY KEY (id)
 
 ALTER TABLE tasks DROP completed,
 
-ADD completed_at timestamp DEFAULT null,
+ADD completed_at timestamp DEFAULT NULL,
 
 ALTER updated_at SET NOT NULL,
 ALTER updated_at SET DEFAULT now();
@@ -44,4 +44,23 @@ WHERE completed_at IS NULL;
 SELECT * FROM tasks
 ORDER BY created_at DESC;
 
+INSERT INTO tasks(title, description)
+VALUES('mistake 1', 'test entry');
 
+INSERT INTO tasks(title, description)
+VALUES ('mistake 2', 'another test entry');
+
+SELECT title FROM tasks 
+WHERE title LIKE '%mistake%';
+
+DELETE FROM tasks 
+WHERE title = 'mistake 1';
+
+SELECT title, description FROM tasks 
+WHERE title LIKE '%mistake%';
+
+DELETE FROM tasks
+WHERE title LIKE '%mistake%';
+
+SELECT * FROM tasks
+ORDER BY title ASC;
