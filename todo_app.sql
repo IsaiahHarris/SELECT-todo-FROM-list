@@ -32,6 +32,11 @@ INSERT INTO tasks VALUES (default, 'STUDY SQL', 'COMPLETE THIS EXERCISE', defaul
 INSERT INTO tasks (title, description)
 VALUES ('STUDY POSTGRESQL', 'READ ALL THE DOCUMENTATION');
 
+SELECT title FROM tasks
+WHERE completed_at IS NULL;
+
+UPDATE tasks SET completed_at = now()
+WHERE title = 'STUDY SQL';
 
 
 
