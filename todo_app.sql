@@ -11,7 +11,7 @@ CREATE DATABASE todo_app;
 
 
 CREATE TABLE tasks(
-id integer NOT NULL,
+id SERIAL NOT NULL,
 title varchar(255) NOT NULL,
 description text,
 created_at timestamp without time zone NOT NULL DEFAULT now(),
@@ -22,4 +22,16 @@ PRIMARY KEY (id)
 
 ALTER TABLE tasks DROP completed,
 
-ADD completed_at timestamp DEFAULT null;
+ADD completed_at timestamp DEFAULT null,
+
+ALTER updated_at SET NOT NULL,
+ALTER updated_at SET DEFAULT now();
+
+INSERT INTO tasks VALUES (default, 'STUDY SQL', 'COMPLETE THIS EXERCISE', default, default, NULL);
+
+INSERT INTO tasks (title, description)
+VALUES ('STUDY POSTGRESQL', 'READ ALL THE DOCUMENTATION');
+
+
+
+
