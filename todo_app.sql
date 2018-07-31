@@ -38,5 +38,10 @@ WHERE completed_at IS NULL;
 UPDATE tasks SET completed_at = now()
 WHERE title = 'STUDY SQL';
 
+SELECT title, description FROM tasks 
+WHERE completed_at IS NULL;
+
+SELECT * FROM tasks
+ORDER BY created_at DESC;
 
 
