@@ -20,4 +20,6 @@ completed boolean NOT NULL DEFAULT false,
 PRIMARY KEY (id)
 );
 
-ALTER TABLE tasks DROP completed;
+ALTER TABLE tasks DROP completed,
+
+ADD completed_at timestamp DEFAULT null;
