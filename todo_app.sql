@@ -1,2 +1,6 @@
 DROP DATABASE IF EXISTS todo_app;
 CREATE DATABASE todo_app;
+
+CREATE ROLE michael;
+DROP ROLE IF EXISTS michael;
+CREATE ROLE michael WITH ENCRYPTED PASSWORD 'stonebreaker';
